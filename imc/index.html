@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculo IMC</title>
+</head>
+<body>
+  <h1>Calculo IMC com JavaScript</h1>
+
+  <form>
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" name="peso" required>
+    <br>
+    <label for="altura">Altura (m):</label>
+    <input type="number" id="altura" name="altura" required>
+    <br>
+    <button id="btn" type="button" onclick="calcularIMC()">Calcular IMC</button>
+  </form>
+
+  <p>Seu IMC é: <span id="resultado"></span></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
