@@ -57,3 +57,36 @@ function mudarId() {
 }
 
 // mudarId()
+
+const btnAdd = document.getElementById('addTask')
+const campoTask = document.getElementById('newTask')
+const lista = document.getElementById('taskList')
+
+btnAdd.addEventListener("click", function (event) {
+    event.preventDefault();
+    const textTask = campoTask.value;
+
+    if (textTask.trim() !== "") {
+        // criar uma li
+        const newTask = document.createElement("li");
+
+        // criando btn excluir task
+        const btnDelete = document.createElement("button");
+        btnDelete.textContent = "Excluir";
+
+        btnDelete.style.marginLeft = "10px"
+
+        btnDelete.addEventListener("click", function () {
+            lista.removeChild(newTask);
+        })
+
+        newTask.textContent = textTask;
+
+        newTask.appendChild(btnDelete)
+
+        lista.appendChild(newTask);
+
+        // limpa o campo de entrada
+        campoTask.value = "";
+    }
+});
