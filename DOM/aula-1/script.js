@@ -4,15 +4,17 @@
 let botao = document.getElementById('meuBotao');
 console.log(botao);
 
-// Selecionando um elemento a partir da classe
+// // Selecionando um elemento a partir da classe
 let paragrafo = document.getElementsByClassName('meuParagrafo');
-console.log(paragrafo);
+// console.log(paragrafo);
 
-// Selecionando um elemento a partir da tag
+// // Selecionando um elemento a partir da tag
 let headers = document.getElementsByTagName('h1');
 console.log(headers);
 
-// Selecionando um elemento a partir do seletor
+// headers[1].style.color = 'red';
+
+// // Selecionando um elemento a partir do seletor
 let primeiroPargrafo = document.querySelector('p');
 console.log(primeiroPargrafo);
 
