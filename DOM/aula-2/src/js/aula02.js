@@ -35,7 +35,6 @@ function modoDark() {
     console.log('modo dark')
     tela.classList.add("dark");
     tela.classList.remove("light");
-    console.log(classList)
 }
 
 function modoLight() {
@@ -43,8 +42,16 @@ function modoLight() {
     console.log('modo light')
     tela.classList.remove("dark");
     tela.classList.add("light");
-    console.log(classList)
 }
+
+
+
+
+
+
+
+
+
 
 // /////// MUDAR ID ///////
 
