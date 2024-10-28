@@ -1,0 +1,9 @@
+#data-container img {
+    width: 150px;
+    height: auto;
+}
+
+.character-info {
+    text-align: center;
+    margin-top: 20px;
+}
