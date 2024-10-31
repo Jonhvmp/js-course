@@ -51,8 +51,55 @@ body {
 }
 
 .character-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     text-align: center;
     margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #d8d5d5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #949292;
+    transition: all 0.3s;
+}
+
+.character-info:hover {
+    background-color: #e1e1e1;
+    border: 2px solid #4e4d4d;
+    transition: all 0.3s;
+}
+
+.character-info__image img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.character-info__image img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.character-info__details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.character-info__details h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4e4d4d;
+}
+
+.character-info__details p {
+    font-size: 1rem;
+    color: #4e4d4d;
 }
 
 #character-id {
