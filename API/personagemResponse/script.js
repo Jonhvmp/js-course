@@ -23,16 +23,16 @@ function getData() {
             div.innerHTML = `
                 <article class="character-info">
                     <div class="character-info__image">
-                    <img src="${character.image}" alt="${character.name}">
+                        <img src="${character.image}" alt="${character.name}">
                     </div>
                     <div class="character-info__details">
-                    <h2>${character.name}</h2>
-                    <p><strong>Status:</strong> ${character.status}</p>
-                    <p><strong>Species:</strong> ${character.species}</p>
-                    <p><strong>Gender:</strong> ${character.gender}</p>
-                    <p><strong>Origin:</strong> ${character.origin.name}</p>
-                    <p><strong>Location:</strong> ${character.location.name}</p>
-                </div>
+                        <h2>${character.name}</h2>
+                        <p><strong>Status:</strong> ${character.status}</p>
+                        <p><strong>Species:</strong> ${character.species}</p>
+                        <p><strong>Gender:</strong> ${character.gender}</p>
+                        <p><strong>Origin:</strong> ${character.origin.name}</p>
+                        <p><strong>Location:</strong> ${character.location.name}</p>
+                    </div>
                 </article>
             `;
         } else {
