@@ -10,3 +10,8 @@
 // }
 
 // teste2() // funciona
+
+
+// idade = 18
+// const mensagem = idade >= 18 ? 'Maior de idade' : 'Menor de idade'
+// console.log(mensagem) // Maior de idade
