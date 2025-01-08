@@ -7,11 +7,18 @@ footer {
 }
 
 main {
-  border-radius: 8px;
-  flex: 1;
-  width: 600px;
+  /* Removendo flex: 1 (se realmente não precisa do "flex-grow") */
+  display: flex;
+  flex-direction: column;
+
+  /* Ajuste para telas grandes */
+  width: 100%;
+  max-width: 600px;
+  /* ou 700px, 800px, etc., conforme desejar */
   margin: 2rem auto;
   padding: 1rem;
+
+  border-radius: 8px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
