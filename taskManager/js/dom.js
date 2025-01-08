@@ -124,30 +124,33 @@ function renderizarTarefas(listaDeTarefas, tarefasParaExibir = null) {
   atualizarContador(listaDeTarefas);
 }
 
-inputTarefa.addEventListener('focus', () => {
-  inputName.disabled = true;
-  inputName.value = '';
-});
-
 inputTarefa.addEventListener('blur', () => {
   inputName.disabled = false;
   inputName.value = '';
+  inputName.style.cursor = 'auto';
 });
 
-inputName.addEventListener('focus', () => {
-  inputTarefa.disabled = true;
-  inputTarefa.value = '';
-});
+inputTarefa.addEventListener('focus', () => {
+  inputName.disabled = true;
+  inputName.value = '';
+  inputName.style.cursor = 'not-allowed';
 
-inputName.addEventListener('blur', () => {
-  inputTarefa.disabled = false;
-  inputTarefa.value = '';
-
-  // Redefinir o filtro para "todas"
   const btnFiltroTodas = document.querySelector('.btnFiltro[data-filtro="todas"]');
   if (btnFiltroTodas) {
     btnFiltroTodas.click();
   }
+});
+
+inputName.addEventListener('blur', () => {
+  inputTarefa.disabled = false;
+  inputTarefa.style.cursor = 'auto';
+  inputTarefa.value = '';
+});
+
+inputName.addEventListener('focus', () => {
+  inputTarefa.disabled = true;
+  inputTarefa.style.cursor = 'not-allowed';
+  inputTarefa.value = '';
 });
 
 export {

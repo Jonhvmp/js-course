@@ -80,6 +80,10 @@ document.getElementById('btnAdicionar').addEventListener('click', () => {
 const btnFiltros = document.querySelectorAll('.btnFiltro');
 btnFiltros.forEach((btn) => {
   btn.addEventListener('click', () => {
+    btnFiltros.forEach((b) => b.classList.remove('ativo'));
+
+    btn.classList.add('ativo');
+
     const filtro = btn.getAttribute('data-filtro');
     let resultado = null;
 

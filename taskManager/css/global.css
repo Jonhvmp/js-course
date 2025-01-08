@@ -61,6 +61,11 @@ button {
   font-weight: 600;
 }
 
+.btnFiltro.ativo {
+  background-color: #3498db;
+  color: #fff;
+}
+
 .btnFiltro:hover {
-  background-color: #bdc3c7;
+  opacity: 0.8;
 }
