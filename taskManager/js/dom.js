@@ -119,6 +119,32 @@ function renderizarTarefas(listaDeTarefas, tarefasParaExibir = null) {
   atualizarContador(listaDeTarefas);
 }
 
+inputTarefa.addEventListener('focus', () => {
+  inputName.disabled = true;
+  inputName.value = '';
+});
+
+inputTarefa.addEventListener('blur', () => {
+  inputName.disabled = false;
+  inputName.value = '';
+});
+
+inputName.addEventListener('focus', () => {
+  inputTarefa.disabled = true;
+  inputTarefa.value = '';
+});
+
+inputName.addEventListener('blur', () => {
+  inputTarefa.disabled = false;
+  inputTarefa.value = '';
+
+  // Redefinir o filtro para "todas"
+  const btnFiltroTodas = document.querySelector('.btnFiltro[data-filtro="todas"]');
+  if (btnFiltroTodas) {
+    btnFiltroTodas.click();
+  }
+});
+
 export {
   inputTarefa,
   inputName,
