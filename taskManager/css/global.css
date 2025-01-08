@@ -48,6 +48,11 @@ button {
   border: none;
 }
 
+.container-botoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .btnFiltro {
   background-color: #ecf0f1;
   color: #333;

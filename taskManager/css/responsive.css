@@ -10,6 +10,11 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .container-botoes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 300px) {

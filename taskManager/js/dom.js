@@ -109,9 +109,14 @@ function renderizarTarefas(listaDeTarefas, tarefasParaExibir = null) {
     });
 
     li.appendChild(containerDescricao);
-    li.appendChild(btnConcluir);
-    li.appendChild(btnEditar);
-    li.appendChild(btnRemover);
+    const containerBotoes = document.createElement('div');
+    containerBotoes.className = 'container-botoes';
+
+    containerBotoes.appendChild(btnConcluir);
+    containerBotoes.appendChild(btnEditar);
+    containerBotoes.appendChild(btnRemover);
+
+    li.appendChild(containerBotoes);
 
     listaTarefasDOM.appendChild(li);
   });

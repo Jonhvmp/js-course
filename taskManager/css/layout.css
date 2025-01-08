@@ -7,17 +7,12 @@ footer {
 }
 
 main {
-  /* Removendo flex: 1 (se realmente não precisa do "flex-grow") */
   display: flex;
   flex-direction: column;
-
-  /* Ajuste para telas grandes */
   width: 100%;
   max-width: 600px;
-  /* ou 700px, 800px, etc., conforme desejar */
   margin: 2rem auto;
   padding: 1rem;
-
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -148,7 +143,28 @@ main {
 .tarefa-descricao {
   font-size: 1rem;
   font-weight: 600;
+  border: 1px solid #bdc3c7;
+  padding: 0.3rem;
+  border-radius: 4px;
   margin-bottom: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+.tarefa-descricao::before {
+  content: "Descrição: ";
+  font-style: italic;
+  margin-right: 3px;
+}
+
+.tarefa-descricao span {
+  font-weight: normal;
+}
+
+.tarefa-descricao:hover {
+  background-color: #ecf0f1;
+  backdrop-filter: blur(5px);
+  border: 1px solid #bdc3c7;
+  padding: 0.3rem;
 }
 
 .tarefa-data {
