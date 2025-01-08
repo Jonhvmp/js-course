@@ -37,7 +37,7 @@ main {
   margin-bottom: 1rem;
 }
 
-#buscaInput,
+#nameInput,
 #tarefaInput {
   flex: 1;
   padding: 0.5rem;
