@@ -23,6 +23,14 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#btnAnterior, #btnProximo {
+  background-color: #3498db;
+  color: #fff;
+  padding: 7px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
 .input-area {
   display: flex;
   gap: 0.5rem;
