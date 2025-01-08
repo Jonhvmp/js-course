@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerenciamento de Tarefas</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Faça sua task</h1>
+  </header>
+
+  <main>
+    <section class="input-area">
+      <input type="text" id="buscaInput" placeholder="Buscar tarefa..." />
+      <input type="text" id="tarefaInput" placeholder="Descrição da nova tarefa" />
+      <button id="btnAdicionar">Adicionar</button>
+    </section>
+
+    <div id="mensagem" class="mensagem-oculta"></div>
+
+    <section class="filtro-area">
+      <button class="btnFiltro" data-filtro="todas">Todas</button>
+      <button class="btnFiltro" data-filtro="pendentes">Pendentes</button>
+      <button class="btnFiltro" data-filtro="concluidas">Concluídas</button>
+      <span id="contadorTarefas"></span>
+    </section>
+
+    <section class="lista-area">
+      <ul id="listaTarefas"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dev - <a href="https://github.com/Jonhvmp">Jonh Alex</a></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

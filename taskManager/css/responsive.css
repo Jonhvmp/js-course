@@ -1,0 +1,60 @@
+/* responsive.css */
+
+/*
+   Breakpoint para telas bem pequenas: até 600px
+   (mantemos a maior parte do que você já tinha)
+*/
+@media (max-width: 600px) {
+  body {
+    /* Exemplo de ajuste no body para remover grandes margens/espacamentos */
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    margin: 1rem;
+    /* reduz um pouco o espaçamento para caber na tela */
+    padding: 1rem;
+    width: auto;
+    /* Permite 100% da largura dentro do padding do body */
+    max-width: 100%;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .filtro-area {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #contadorTarefas {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .tarefa-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tarefa-item span {
+    margin-right: 0;
+  }
+
+  .tarefa-item button {
+    margin-left: 0;
+  }
+}
+
+/*
+   Breakpoint para telas até 1024px
+   (Opcional, mas ajuda a ajustar quando ainda não é “muito pequeno”, mas também não é grande).
+*/
+@media (max-width: 1024px) {
+  main {
+    max-width: 80%;
+  }
+}
