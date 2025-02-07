@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD com MySQL</title>
+</head>
+<body>
+  <h2>Cadastro de Usuários</h2>
+  <input type="text" id="name" placeholder="Nome">
+  <input type="email" id="email" placeholder="Email">
+  <button onclick="addUser()">Adicionar</button>
+
+  <h2>Lista de Usuários</h2>
+  <ul id="users"></ul>
+
+  <script>
+    const API_URL = "http://localhost:3000/users";
+
+    function addUser() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      })
+      .then(response => response.json())
+      .then(() => fetchUsers());
+    }
+
+    function fetchUsers() {
+      fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        const usersList = document.getElementById("users");
+        usersList.innerHTML = "";
+        data.forEach(user => {
+          usersList.innerHTML += `<li>
+              ${user.name} - ${user.email}
+              <button onclick="deleteUser(${user.id})">Excluir</button>
+              <button onclick="updateUser(${user.id}, '${user.name}', '${user.email}')">Editar</button>
+            </li>`;
+        });
+      });
+    }
+
+    function deleteUser(id) {
+      fetch(`${API_URL}/${id}`, { method: "DELETE" })
+      .then(() => fetchUsers());
+    }
+
+    function updateUser(id, currentName, currentEmail) {
+      const name = prompt("Digite o novo nome:", currentName);
+      const email = prompt("Digite o novo email:", currentEmail);
+      if (name && email) {
+        fetch(`${API_URL}/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email }),
+        })
+        .then(() => fetchUsers());
+      }
+    }
+
+    fetchUsers();
+  </script>
+</body>
+</html>
