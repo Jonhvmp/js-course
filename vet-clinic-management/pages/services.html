@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <header id="header"></header>
+  <main>
+    <h1>Lista de Serviços</h1>
+    <ul id="service-list"></ul>
+  </main>
+  <footer id="footer"></footer>
+  <script src="../data/mockData.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const list = document.getElementById('service-list');
+      services.forEach(service => {
+        const li = document.createElement('li');
+        li.textContent = `${service.name} - R$ ${service.price}`;
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+
+</html>
