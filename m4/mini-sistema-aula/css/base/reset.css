@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(78, 84, 200, 0.5);
+  font-size: 24px;
+}
+
+h2 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 10px;
+}

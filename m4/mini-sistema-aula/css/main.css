@@ -1,0 +1,18 @@
+/* Base */
+@import url('base/variaveis.css');
+@import url('base/reset.css');
+
+/* Layout */
+@import url('layout/header.css');
+@import url('layout/main.css');
+
+/* Componentes */
+@import url('componentes/formulario.css');
+@import url('componentes/botoes.css');
+@import url('componentes/cards.css');
+@import url('componentes/modal.css');
+@import url('componentes/estatisticas.css');
+
+/* Utilidades */
+@import url('utils/animacoes.css');
+@import url('utils/responsivo.css');

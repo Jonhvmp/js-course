@@ -1,0 +1,121 @@
+.item-card {
+  background-color: rgba(36, 40, 59, 0.8);
+  border: 1px solid rgba(78, 84, 200, 0.3);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+  border-color: var(--secondary-color);
+}
+
+.item-card h3 {
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.item-type {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.type-Arma {
+  background-color: #f44336;
+  color: white;
+}
+
+.type-Poção {
+  background-color: #4caf50;
+  color: white;
+}
+
+.type-Defesa {
+  background-color: #2196f3;
+  color: white;
+}
+
+.type-Comida {
+  background-color: #ff9800;
+  color: white;
+}
+
+.type-Ferramenta {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.type-Outro {
+  background-color: #607d8b;
+  color: white;
+}
+
+.item-weight {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.item-description {
+  color: var(--text-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+
+.equipado {
+  border: 2px solid var(--success) !important;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4) !important;
+}
+
+.equipado-icon {
+  color: var(--success);
+  margin-left: 5px;
+}
+
+.item-equip-flag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: var(--text-bright);
+  font-size: 14px;
+}
+
+.item-value {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item-value i {
+  font-size: 10px;
+}

@@ -1,0 +1,172 @@
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    width: 90%;
+  }
+
+  .type-bar {
+    grid-template-columns: 80px 1fr 40px;
+    font-size: 12px;
+  }
+
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .item-card .item-description {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .btn {
+    padding: 12px 16px;
+  }
+
+  .filter-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    padding: 15px;
+  }
+
+  .sidebar,
+  .inventory-container {
+    padding: 15px;
+  }
+
+  .item-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title weight"
+      "type equip"
+      "desc desc"
+      "value value";
+    gap: 5px;
+  }
+
+  .item-card h3 {
+    grid-area: title;
+    font-size: 16px;
+  }
+
+  .item-weight {
+    grid-area: weight;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .item-type {
+    grid-area: type;
+  }
+
+  .item-equip-flag {
+    grid-area: equip;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: right;
+  }
+
+  .item-description {
+    grid-area: desc;
+  }
+
+  .item-value {
+    grid-area: value;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+  }
+}
+
+/* Preferências do sistema */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation-duration: 0.001s !important;
+  }
+}
+
+/* Ajustes para dispositivos touch */
+@media (hover: none) {
+  .item-card:hover {
+    transform: none;
+  }
+
+  .stat-card:hover {
+    transform: none;
+  }
+
+  .item-card:active {
+    background-color: rgba(78, 84, 200, 0.2);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+}

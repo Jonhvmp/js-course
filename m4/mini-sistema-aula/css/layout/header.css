@@ -1,0 +1,41 @@
+header {
+  background-color: var(--background-light);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  background-color: rgba(78, 84, 200, 0.2);
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weight-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.weight-progress-bar {
+  height: 100%;
+  background-color: var(--success);
+  border-radius: 3px;
+  transition: width 0.5s ease, background-color 0.5s ease;
+  width: 0%;
+}

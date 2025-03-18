@@ -1,0 +1,51 @@
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.sidebar {
+  background-color: var(--background-light);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.inventory-container {
+  background-color: var(--background-light);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+.filter-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(169, 177, 214, 0.2);
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  animation: pulse 2s infinite;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: var(--text-light);
+  font-size: 14px;
+  background-color: var(--background-light);
+}
