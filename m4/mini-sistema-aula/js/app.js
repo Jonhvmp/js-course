@@ -104,6 +104,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item-value">${valorItem} <i class="fas fa-coins"></i></div>
             `;
 
+            // Adiciona acessibilidade e feedback tátil para dispositivos móveis
+            itemEl.setAttribute('role', 'button');
+            itemEl.setAttribute('aria-label', `Item ${item.nome}, tipo ${item.tipo}, peso ${item.peso.toFixed(1)}`);
+
+            // Adiciona suporte para eventos de toque
+            itemEl.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            });
+
+            itemEl.addEventListener('touchend', function() {
+                this.classList.remove('touch-active');
+            });
+
             itemEl.addEventListener('click', () => abrirModal(item));
             inventoryList.appendChild(itemEl);
         });
@@ -205,6 +218,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             statHtml += '</div>';
+        }
+
+        // Adiciona responsividade à visualização de stats
+        const isMobile = window.innerWidth <= 576;
+
+        // Adapta a visualização para telas menores
+        if (isMobile) {
+            // Simplifica as estatísticas em telas muito pequenas
+            if (stats.totalItens > 10) {
+                // Limita o número de barras de tipo em telas pequenas
+                const tiposPrincipais = Object.entries(stats.distribuicaoPorTipo)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 3);
+
+                const outrosTipos = Object.entries(stats.distribuicaoPorTipo)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(3);
+
+                if (outrosTipos.length > 0) {
+                    const outrosQuantidade = outrosTipos.reduce((total, item) => total + item[1], 0);
+                    const tiposAtualizados = Object.fromEntries(tiposPrincipais);
+                    tiposAtualizados['Outros'] = outrosQuantidade;
+                    stats.distribuicaoPorTipo = tiposAtualizados;
+                }
+            }
         }
 
         // Atualiza o conteúdo
@@ -401,8 +439,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     };
 
+    // Adicionar detecção de tamanho de tela para responsividade
+    const verificarResponsividade = () => {
+        const isMobile = window.innerWidth <= 576;
+        document.body.classList.toggle('mobile-view', isMobile);
+
+        // Ajuste para mobile
+        if (modal.style.display === 'block') {
+            modal.querySelector('.modal-content').style.maxWidth = isMobile ? '95%' : '500px';
+        }
+    };
+
+    // Lidar com redimensionamento da janela
+    window.addEventListener('resize', verificarResponsividade);
+
+    // Garantir que o modal funcione bem em dispositivos móveis
+    if ('ontouchstart' in window) {
+        modal.addEventListener('touchstart', (e) => {
+            if (e.target === modal) {
+                fecharModal();
+            }
+        });
+    }
+
     // Inicialização da interface
     adicionarBotaoLimpar();
+    verificarResponsividade();
     atualizarInventario();
 
     // Adicionar alguns itens de exemplo se o inventário estiver vazio

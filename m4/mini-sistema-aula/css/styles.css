@@ -36,6 +36,8 @@ body {
   margin: 0 auto;
   padding: 20px;
   flex: 1;
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
 }
 
 h1 {
@@ -170,6 +172,7 @@ textarea {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
   min-height: 200px;
+  transition: all 0.3s ease;
 }
 
 .item-card {
@@ -270,6 +273,8 @@ textarea {
   background-color: rgba(0, 0, 0, 0.7);
   overflow: auto;
   animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(5px);
+  /* Efeito de desfoque moderno */
 }
 
 .modal-content {
@@ -372,6 +377,20 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .main-content {
     grid-template-columns: 1fr;
@@ -392,15 +411,200 @@ footer {
   }
 
   .modal-content {
-    margin: 20% auto;
+    margin: 10% auto;
     width: 90%;
+  }
+
+  .type-bar {
+    grid-template-columns: 80px 1fr 40px;
+    font-size: 12px;
+  }
+
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .item-card .item-description {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  /* Melhor visualização para botões em dispositivos móveis */
+  .btn {
+    padding: 12px 16px;
+    /* Botões maiores para touch */
+  }
+
+  .filter-section {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-/* Adicionando estilos para novos componentes */
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    padding: 15px;
+  }
+
+  .sidebar,
+  .inventory-container {
+    padding: 15px;
+  }
+
+  /* Ajuste para os cartões de item em telas muito pequenas */
+  .item-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title weight"
+      "type equip"
+      "desc desc"
+      "value value";
+    gap: 5px;
+  }
+
+  .item-card h3 {
+    grid-area: title;
+    font-size: 16px;
+  }
+
+  .item-weight {
+    grid-area: weight;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .item-type {
+    grid-area: type;
+  }
+
+  .item-equip-flag {
+    grid-area: equip;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: right;
+  }
+
+  .item-description {
+    grid-area: desc;
+  }
+
+  .item-value {
+    grid-area: value;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+  }
+}
+
+/* Adicionando suporte para modo claro/escuro e preferências do sistema */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation-duration: 0.001s !important;
+  }
+}
+
+/* Adicionando animações mais suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Melhorando acessibilidade para interações de touch */
+@media (hover: none) {
+  .item-card:hover {
+    transform: none;
+  }
+
+  .stat-card:hover {
+    transform: none;
+  }
+
+  /* Feedback visual para toque */
+  .item-card:active {
+    background-color: rgba(78, 84, 200, 0.2);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Adicionando estilo para comportamento de grid mais fluido */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+/* Melhorias em elementos existentes */
 .weight-progress {
   width: 100%;
-  height: 6px;
+  height: 8px;
+  /* Maior para melhor toque em dispositivos móveis */
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   margin-top: 5px;

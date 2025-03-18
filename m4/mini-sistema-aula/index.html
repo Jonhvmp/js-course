@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1b26">
   <title>Sistema de Inventário de Jogos</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -85,9 +86,9 @@
       </div>
     </div>
 
-    <div id="item-details-modal" class="modal">
+    <div id="item-details-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-item-name">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" aria-label="Fechar">&times;</span>
         <h2 id="modal-item-name"></h2>
         <div class="modal-details">
           <p><strong>Descrição:</strong> <span id="modal-item-description"></span></p>
