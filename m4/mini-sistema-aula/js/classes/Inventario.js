@@ -1,60 +1,6 @@
-/**
- * Classe que representa um item do jogo
- */
-class Item {
-    /**
-     * Cria uma instância de Item
-     * @param {string} nome - Nome do item
-     * @param {string} descricao - Descrição do item
-     * @param {string} tipo - Tipo do item (ex: "Arma", "Poção", "Defesa")
-     * @param {number} peso - Peso do item
-     */
-    constructor(nome, descricao, tipo, peso) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.tipo = tipo;
-        this.peso = parseFloat(peso);
-        this.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
-    }
-
-    /**
-     * Retorna os detalhes do item em formato de string
-     * @returns {string} String com os detalhes do item
-     */
-    getDetalhes() {
-        return `
-            Item: ${this.nome}
-            Descrição: ${this.descricao}
-            Tipo: ${this.tipo}
-            Peso: ${this.peso}
-        `;
-    }
-
-    /**
-     * Verifica se o item é equipável
-     * @returns {boolean} true se o item puder ser equipado
-     */
-    isEquipavel() {
-        return ['Arma', 'Defesa'].includes(this.tipo);
-    }
-
-    /**
-     * Calcula o valor do item baseado no seu tipo e peso
-     * @returns {number} O valor calculado do item
-     */
-    calcularValor() {
-        const valorBase = {
-            'Arma': 50,
-            'Poção': 25,
-            'Defesa': 40,
-            'Comida': 10,
-            'Ferramenta': 30,
-            'Outro': 15
-        };
-
-        return Math.round(valorBase[this.tipo] * this.peso);
-    }
-}
+import Item from './Item.js';
+import CONFIG from '../config.js';
+import { salvarInventario, carregarInventario } from '../utils/storage.js';
 
 /**
  * Classe que gerencia o inventário de itens
@@ -64,13 +10,16 @@ class Inventario {
      * Cria um novo inventário
      * @param {number} capacidadeMaxima - Capacidade máxima de peso do inventário
      */
-    constructor(capacidadeMaxima = 100) {
+    constructor(capacidadeMaxima = CONFIG.CAPACIDADE_MAX_INVENTARIO) {
         this.items = [];
         this.capacidadeMaxima = capacidadeMaxima;
-        this.itensEquipados = {
-            'Arma': null,
-            'Defesa': null
-        };
+        this.itensEquipados = {};
+
+        // Inicializa os slots de equipamento vazios
+        CONFIG.SLOTS_EQUIPAMENTO.forEach(slot => {
+            this.itensEquipados[slot] = null;
+        });
+
         this.carregarDoLocalStorage();
     }
 
@@ -278,34 +227,32 @@ class Inventario {
      * Salva o inventário no localStorage
      */
     salvarNoLocalStorage() {
-        localStorage.setItem('inventario', JSON.stringify(this.items));
-        localStorage.setItem('inventarioConfig', JSON.stringify({
+        salvarInventario(this.items, {
             capacidadeMaxima: this.capacidadeMaxima,
             itensEquipados: this.itensEquipados
-        }));
+        });
     }
 
     /**
      * Carrega o inventário do localStorage
      */
     carregarDoLocalStorage() {
-        try {
-            const dados = localStorage.getItem('inventario');
-            const config = localStorage.getItem('inventarioConfig');
+        const { items, config } = carregarInventario();
 
-            if (dados) {
-                const itensCarregados = JSON.parse(dados);
-                this.items = itensCarregados.map(i => Object.assign(new Item(), i));
-            }
+        if (items && items.length) {
+            this.items = items;
+        }
 
-            if (config) {
-                const configObj = JSON.parse(config);
-                this.capacidadeMaxima = configObj.capacidadeMaxima || 100;
-                this.itensEquipados = configObj.itensEquipados || { 'Arma': null, 'Defesa': null };
-            }
-        } catch (error) {
-            console.error('Erro ao carregar dados do localStorage:', error);
-            this.items = [];
+        if (config) {
+            this.capacidadeMaxima = config.capacidadeMaxima || CONFIG.CAPACIDADE_MAX_INVENTARIO;
+            this.itensEquipados = config.itensEquipados || {};
+
+            // Garante que todos os slots existam
+            CONFIG.SLOTS_EQUIPAMENTO.forEach(slot => {
+                if (this.itensEquipados[slot] === undefined) {
+                    this.itensEquipados[slot] = null;
+                }
+            });
         }
     }
 
@@ -314,6 +261,11 @@ class Inventario {
      */
     limparInventario() {
         this.items = [];
+        CONFIG.SLOTS_EQUIPAMENTO.forEach(slot => {
+            this.itensEquipados[slot] = null;
+        });
         this.salvarNoLocalStorage();
     }
 }
+
+export default Inventario;
