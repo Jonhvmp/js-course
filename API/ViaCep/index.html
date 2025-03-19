@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta de CEP</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Consulta de CEP</h1>
-  <form id="cepForm">
-    <label for="cep">Digite o CEP:</label>
-    <input type="text" id="cep" name="cep" placeholder="Ex: 01001-000" required>
-    <button type="submit" title="Clique para consultar o CEP informado.">Consultar</button>
-  </form>
+  <div class="container">
+    <h1>Consulta de CEP</h1>
+    <form id="cepForm">
+      <div class="input-group">
+        <label for="cep">Digite o CEP:</label>
+        <input type="text" id="cep" name="cep" placeholder="Ex: 01001-000" required>
+      </div>
+      <button type="submit" title="Clique para consultar o CEP informado.">Consultar</button>
+    </form>
 
-  <div id="cepDetails">
-
+    <div id="cepDetails"></div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
