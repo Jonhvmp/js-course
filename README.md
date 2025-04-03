@@ -16,3 +16,5 @@ As principais tecnologias utilizadas neste repositório incluem:
 - **Node.js**: Utilizado para o desenvolvimento backend com JavaScript.
 - **Express**: Framework para aplicações web no Node.js.
 - **React**: Biblioteca para construção de interfaces de usuário no frontend.
+
+Desenvolvedor [Jonh Alex](https://www.linkedin.com/in/jonhvmp)
