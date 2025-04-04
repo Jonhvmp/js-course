@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Jonh Alex Paz de Lima</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="actions">
+            <button id="download-pdf" class="download-button">
+                <i class="fas fa-file-pdf"></i> Exportar para PDF
+            </button>
+            <div class="settings">
+                <label for="paper-size">Tamanho do papel:</label>
+                <select id="paper-size">
+                    <option value="a4">A4</option>
+                    <option value="letter">Carta</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="curriculum" class="curriculum">
+            <!-- Cabeçalho com nome e informações de contato -->
+            <header>
+                <h1>JONH ALEX PAZ DE LIMA</h1>
+                <div class="divider"></div>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Vitória</p>
+                    <p><i class="fas fa-phone"></i> +55 27 9 8860-0964</p>
+                    <p><i class="fas fa-envelope"></i> jonhpaz08@gmail.com</p>
+                    <p><i class="fab fa-linkedin"></i> linkedin.com/in/jonhvmp</p>
+                    <p><i class="fab fa-github"></i> github.com/Jonhvmp</p>
+                </div>
+            </header>
+
+            <!-- Resumo -->
+            <section>
+                <h2>Resumo</h2>
+                <div class="content">
+                    <p>Profissional com excelentes habilidades de comunicação e amplo conhecimento em Programação. Sempre em busca das melhores soluções aos problemas apresentados, de forma a colaborar com a rotina diária e prestar um serviço de alta qualidade.</p>
+                </div>
+            </section>
+
+            <!-- Habilidades e competências -->
+            <section>
+                <h2>Habilidades e competências</h2>
+                <div class="content skills-content">
+                    <div class="skills-column">
+                        <ul>
+                            <li>Domínio de versionamento de código com Git e GitHub</li>
+                            <li>Dedicação para solucionar problemas de software</li>
+                            <li>Facilidade para compreender lógicas de programação</li>
+                            <li>Gestão de tempo eficaz para cumprir prazos</li>
+                        </ul>
+                    </div>
+                    <div class="skills-column">
+                        <ul>
+                            <li>Rapidez no aprendizado de novas tecnologias</li>
+                            <li>Familiaridade com trabalho por squad</li>
+                            <li>Comprometimento com a satisfação de clientes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiência profissional -->
+            <section>
+                <h2>Experiência profissional</h2>
+                <div class="content">
+                    <div class="experience-item">
+                        <div class="job-title">Desenvolvedor Full Stack Trainee</div>
+                        <div class="job-info">
+                            <span class="company">Criptonic & Co</span>
+                            <span class="location">Remoto</span>
+                        </div>
+                        <div class="job-period">Dezembro 2024 - atual</div>
+                        <ul>
+                            <li>Desenvolvimento de APIs RESTful, permitindo a comunicação eficiente entre diferentes sistemas e plataformas.</li>
+                            <li>Desenvolvimento de interfaces de usuário intuitivas com frameworks modernos, melhorando a experiência do usuário final.</li>
+                            <li>Implementação e desenvolvimento de soluções escaláveis utilizando arquitetura de microsserviços, garantindo a adaptabilidade a diferentes cargas de trabalho.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Auxiliar Geral</div>
+                        <div class="job-info">
+                            <span class="company">ATIVA</span>
+                            <span class="location">Serra</span>
+                        </div>
+                        <div class="job-period">Agosto 2023 - Fevereiro 2024</div>
+                        <ul>
+                            <li>Reposição dos materiais e produtos utilizados no trabalho, garantindo a disponibilidade dos itens para a execução dos serviços.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formação acadêmica -->
+            <section>
+                <h2>Formação acadêmica</h2>
+                <div class="content">
+                    <div class="education-item">
+                        <div class="degree">Bacharelado: Engenharia de Software</div>
+                        <div class="institution">Universidade Cruzeiro do Sul</div>
+                        <div class="period">Janeiro 2025 - Janeiro 2028</div>
+                        <div class="status">Status - Cursando</div>
+                        <p>Em andamento</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Idiomas -->
+            <section>
+                <h2>Idiomas</h2>
+                <div class="content">
+                    <div class="language-item">
+                        <div class="language-name">Português:</div>
+                        <div class="language-level">Língua materna</div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Inglês:</div>
+                        <div class="language-level">Iniciante</div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 16.66%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificados -->
+            <section>
+                <h2>Certificados</h2>
+                <div class="content">
+                    <ul class="certificates-list">
+                        <li>
+                            <strong>90 horas do curso de Programação, Soft Skills e Inglês, referente ao Módulo 1</strong><br>
+                            Adquirindo as seguintes habilidades:<br>
+                            ➔ Lógica de programação, HTML, CSS e compartilhamento de código com Git e Github<br>
+                            ➔ Gestão de tempo, construção de metas SMART e comunicação não-violenta.<br>
+                            ➔ Pitch de apresentação e rotina de programação em inglês
+                        </li>
+                        <li>
+                            <strong>90 horas do curso de Programação, Soft Skills e Inglês, referente ao Módulo 2</strong><br>
+                            Adquirindo as seguintes habilidades:<br>
+                            ➔ Programação front-end em JavaScript e jQuery<br>
+                            ➔ Gestão ágil de equipes e projetos<br>
+                            ➔ Utilização de sequencing, describing e summarizong
+                        </li>
+                        <li>
+                            <strong>90 horas do curso de Programação, Soft Skills e Inglês, referente ao Módulo 3</strong><br>
+                            Adquirindo as seguintes habilidades:<br>
+                            ➔ Programação back-end em SQL e gerenciamento de dados<br>
+                            ➔ Inovação e visão de negócio<br>
+                            ➔ Comunicação e gerenciamento de projetos tech em squad
+                        </li>
+                        <li>Programação Front-End em JavaScript e jQuery</li>
+                        <li>Desenvolvimento web JavaScript - Fundação Bradesco</li>
+                        <li>Ifood | Vem Ser Tech, Front-End, Programação de Computadores - Ada Tech</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Hobbies -->
+            <section>
+                <h2>Hobbies</h2>
+                <div class="content">
+                    <ul>
+                        <li>Apaixonado por esportes, especialmente futebol, apreciador de séries diversas e entusiasta de videogames, sempre buscando equilíbrio entre lazer e novas experiências criativas.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts necessários para a exportação PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
