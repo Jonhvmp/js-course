@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, Grid3X3, List } from 'lucide-react';
+import { Search, Grid3X3, List } from 'lucide-react';
 import { Product } from '@src/types/product';
 import { categories } from '@src/data/products';
 import { listVariants } from '@src/utils/animations';
@@ -20,10 +20,8 @@ const ProductList: React.FC<ProductListProps> = ({
   title = 'Produtos'
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [sortBy, setSortBy] = useState<SortOption>('featured');
+  const [selectedCategory, setSelectedCategory] = useState('All'); const [sortBy, setSortBy] = useState<SortOption>('featured');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
-  const [showFilters, setShowFilters] = useState(false);
 
   // Filtrar e ordenar produtos
   const filteredAndSortedProducts = useMemo(() => {

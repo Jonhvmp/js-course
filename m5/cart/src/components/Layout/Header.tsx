@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, User, Search, Menu, Store } from 'lucide-react';
-import { useCart } from '@src/hooks/useCart';
+import { ShoppingCart, Search, Menu, Store } from 'lucide-react';
+import { useCartContext } from '@src/contexts/CartContext';
 import Button from '@src/components/ui/Button';
 import Badge from '@src/components/ui/Badge';
 
@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onCartOpen, onMenuToggle }) => {
-  const { getTotalItems } = useCart();
+  const { getTotalItems } = useCartContext();
   const totalItems = getTotalItems;
 
   return (

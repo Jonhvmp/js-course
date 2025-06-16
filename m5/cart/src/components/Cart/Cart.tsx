@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingBag } from 'lucide-react';
-import { useCart } from '@src/hooks/useCart';
+import { useCartContext } from '@src/contexts/CartContext';
 import { cartVariants, listVariants } from '@src/utils/animations';
+import { CartItem as CartItemType } from '@src/types/cart';
 import CartItem from './CartItem';
 import CartSummary from './CartSummary';
 import Button from '@src/components/ui/Button';
@@ -19,7 +20,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
     removeItem,
     clearCart,
     getCartSummary
-  } = useCart();
+  } = useCartContext();
 
   const summary = getCartSummary;
 
@@ -113,9 +114,8 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
                       initial="hidden"
                       animate="visible"
                       className="space-y-4"
-                    >
-                      <AnimatePresence mode="popLayout">
-                        {state.items.map((item) => (
+                    >                      <AnimatePresence mode="popLayout">
+                        {state.items.map((item: CartItemType) => (
                           <CartItem
                             key={item.product.id}
                             item={item}

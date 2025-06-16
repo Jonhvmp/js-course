@@ -1,6 +1,8 @@
+'use client';
+
 import { useReducer, useCallback } from 'react';
 import { CounterState, CounterHookReturn } from '@src/types/counter';
-import { counterReducer, initialCounterState } from '@src/reducers/counterReducer';
+import { counterReducer } from '@src/reducers/counterReducer';
 
 interface UseCounterOptions {
   initialValue?: number;

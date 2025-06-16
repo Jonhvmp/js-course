@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Home, Package, Tag, Star, Headphones, Camera, Gamepad2 } from 'lucide-react';
+import { X, Home, Package, Tag, Headphones, Camera, Gamepad2 } from 'lucide-react';
 import { categories } from '@src/data/products';
 import Button from '@src/components/ui/Button';
 

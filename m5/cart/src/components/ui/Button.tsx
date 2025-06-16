@@ -19,10 +19,8 @@ const Button: React.FC<ButtonProps> = ({
   isLoading = false,
   children,
   className = '',
-  disabled,
-  onClick,
-  type = 'button',
-  ...props
+  disabled, onClick,
+  type = 'button'
 }) => {
   const baseClasses = 'font-medium rounded-lg transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2';
 

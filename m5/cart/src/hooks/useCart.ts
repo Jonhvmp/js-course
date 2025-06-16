@@ -1,6 +1,8 @@
+'use client';
+
 import { useReducer, useCallback, useMemo, useEffect } from 'react';
 import { Product } from '@src/types/product';
-import { CartState, CartAction } from '@src/types/cart';
+import { CartState } from '@src/types/cart';
 import { cartReducer, initialCartState } from '@src/reducers/cartReducer';
 import { useLocalStorage } from './useLocalStorage';
 

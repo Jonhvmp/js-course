@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ShoppingBag, Sparkles, TrendingUp, Star } from 'lucide-react';
-import { products, featuredProducts } from '@src/data/products';
+import { products } from '@src/data/products';
 import { pageVariants } from '@src/utils/animations';
 import Header from '@src/components/Layout/Header';
 import Sidebar from '@src/components/Layout/Sidebar';
@@ -11,7 +11,6 @@ import Cart from '@src/components/Cart/Cart';
 import ProductList from '@src/components/Product/ProductList';
 import Card from '@src/components/ui/Card';
 import Button from '@src/components/ui/Button';
-import Badge from '@src/components/ui/Badge';
 
 export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
