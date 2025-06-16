@@ -18,7 +18,11 @@ export const metadata: Metadata = {
   description: "Plataforma de e-commerce com carrinho avançado, desenvolvida com Next.js 15 e TypeScript",
   keywords: ["e-commerce", "carrinho", "compras", "produtos", "Next.js"],
   authors: [{ name: "ShopCart Team" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
