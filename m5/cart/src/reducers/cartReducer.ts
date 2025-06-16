@@ -13,7 +13,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case 'ADD_ITEM': {
       const existingItem = state.items.find(item => item.product.id === action.payload.id);
-      
+
       let newItems;
       if (existingItem) {
         newItems = state.items.map(item =>
@@ -24,41 +24,41 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
       } else {
         newItems = [...state.items, { product: action.payload, quantity: 1 }];
       }
-      
+
       return calculateTotals({ ...state, items: newItems });
     }
-    
+
     case 'REMOVE_ITEM': {
       const newItems = state.items.filter(item => item.product.id !== action.payload);
       return calculateTotals({ ...state, items: newItems });
     }
-    
+
     case 'UPDATE_QUANTITY': {
       const { id, quantity } = action.payload;
-      
+
       if (quantity <= 0) {
         const newItems = state.items.filter(item => item.product.id !== id);
         return calculateTotals({ ...state, items: newItems });
       }
-      
+
       const newItems = state.items.map(item =>
         item.product.id === id
           ? { ...item, quantity: Math.min(quantity, item.product.stock) }
           : item
       );
-      
+
       return calculateTotals({ ...state, items: newItems });
     }
-    
+
     case 'CLEAR_CART':
       return initialCartState;
-    
+
     case 'APPLY_DISCOUNT':
       return calculateTotals({ ...state, discount: action.payload });
-    
+
     case 'SET_SHIPPING':
       return calculateTotals({ ...state, shipping: action.payload });
-    
+
     default:
       return state;
   }
@@ -69,7 +69,7 @@ function calculateTotals(state: CartState): CartState {
   const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
   const discountAmount = (total * state.discount) / 100;
   const finalTotal = total - discountAmount + state.shipping;
-  
+
   return {
     ...state,
     total,

@@ -15,9 +15,9 @@ interface ProductListProps {
 type ViewMode = 'grid' | 'list';
 type SortOption = 'name' | 'price-asc' | 'price-desc' | 'rating' | 'featured';
 
-const ProductList: React.FC<ProductListProps> = ({ 
-  products, 
-  title = 'Produtos' 
+const ProductList: React.FC<ProductListProps> = ({
+  products,
+  title = 'Produtos'
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');

@@ -40,11 +40,11 @@ export function useCart() {
 
   // Funções computadas com useMemo para performance
   const getTotalPrice = useMemo(() => state.total, [state.total]);
-  
+
   const getTotalItems = useMemo(() => state.totalItems, [state.totalItems]);
-  
+
   const getFinalTotal = useMemo(() => state.finalTotal, [state.finalTotal]);
-  
+
   const getItemById = useCallback((id: string) => {
     return state.items.find(item => item.product.id === id);
   }, [state.items]);

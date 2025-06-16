@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onCartOpen, onMenuToggle }) => {
             >
               <ShoppingCart className="w-5 h-5" />
               <span className="hidden lg:inline">Carrinho</span>
-              
+
               {totalItems > 0 && (
                 <motion.div
                   initial={{ scale: 0 }}

@@ -25,8 +25,8 @@ export function calculateDiscount(total: number, discountPercent: number): numbe
  * Calcula o total final incluindo desconto e frete
  */
 export function calculateFinalTotal(
-  subtotal: number, 
-  discountPercent: number = 0, 
+  subtotal: number,
+  discountPercent: number = 0,
   shipping: number = 0
 ): number {
   const discount = calculateDiscount(subtotal, discountPercent);
@@ -66,7 +66,7 @@ export function calculateShipping(total: number, freeShippingThreshold: number =
   if (total >= freeShippingThreshold) {
     return 0;
   }
-  
+
   // Frete fixo para compras abaixo do threshold
   return 15.99;
 }

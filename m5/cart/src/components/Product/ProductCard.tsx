@@ -22,10 +22,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const handleAddToCart = async () => {
     setIsLoading(true);
-    
+
     // Simular delay da API
     await new Promise(resolve => setTimeout(resolve, 500));
-    
+
     addItem(product);
     setIsLoading(false);
   };
@@ -36,11 +36,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={`w-4 h-4 ${
-              i < Math.floor(rating)
+            className={`w-4 h-4 ${i < Math.floor(rating)
                 ? 'text-yellow-400 fill-current'
                 : 'text-gray-300'
-            }`}
+              }`}
           />
         ))}
         <span className="text-sm text-gray-500 ml-1">
@@ -69,7 +68,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               target.src = `https://via.placeholder.com/300x300/f3f4f6/9ca3af?text=${product.name.charAt(0)}`;
             }}
           />
-          
+
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.featured && (
@@ -77,13 +76,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 ⭐ Destaque
               </Badge>
             )}
-            
+
             {product.stock < 10 && product.stock > 0 && (
               <Badge variant="warning" size="sm">
                 Últimas unidades
               </Badge>
             )}
-            
+
             {product.stock === 0 && (
               <Badge variant="danger" size="sm">
                 Esgotado
@@ -138,7 +137,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 {formatCurrency(product.price)}
               </span>
             </div>
-            
+
             <div className="flex items-center gap-1 text-sm text-gray-500">
               <Package className="w-4 h-4" />
               {product.stock} disponíveis

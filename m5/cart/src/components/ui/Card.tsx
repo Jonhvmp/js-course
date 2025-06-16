@@ -18,20 +18,20 @@ const Card: React.FC<CardProps> = ({
   hoverable = false
 }) => {
   const baseClasses = 'rounded-xl transition-all duration-200';
-  
+
   const variantClasses = {
     default: 'bg-white shadow-sm border border-gray-200',
     elevated: 'bg-white shadow-lg',
     outlined: 'bg-transparent border-2 border-gray-300'
   };
-  
+
   const paddingClasses = {
     none: '',
     sm: 'p-3',
     md: 'p-4',
     lg: 'p-6'
   };
-  
+
   return (
     <motion.div
       variants={hoverable ? cardVariants : undefined}

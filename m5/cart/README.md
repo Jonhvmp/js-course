@@ -28,7 +28,7 @@ Um projeto de e-commerce moderno desenvolvido com **Next.js 15**, **TypeScript**
 ## 🛠 Instalação e Execução
 
 ### Pré-requisitos
-- Node.js 18+ 
+- Node.js 18+
 - npm ou yarn
 
 ### Passo a passo
