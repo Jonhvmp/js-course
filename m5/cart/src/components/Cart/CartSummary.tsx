@@ -106,7 +106,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
         </div>
 
         {/* Cupom de desconto */}
-        <div className="space-y-2">
+        {/* <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">
             Cupom de desconto
           </label>
@@ -127,7 +127,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
               Aplicar
             </Button>
           </div>
-        </div>
+        </div> */}
 
         {/* Divisor */}
         <hr className="border-gray-200" />
@@ -154,8 +154,6 @@ const CartSummary: React.FC<CartSummaryProps> = ({
         {/* Informações adicionais */}
         <div className="text-xs text-gray-500 text-center space-y-1">
           <p>🔒 Compra 100% segura e protegida</p>
-          <p>📦 Entrega em 2-5 dias úteis</p>
-          <p>🔄 30 dias para trocas e devoluções</p>
         </div>
       </div>
     </Card>
